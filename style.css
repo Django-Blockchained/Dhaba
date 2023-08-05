@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,800;6..12,1000&display=swap');
+
+*::after,*::before{
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+
+    font-size: 62.5%;
+}
+
+body{
+
+    font-family: 'Nunito Sans', sans-serif;;
+}
+
+
+/*utility class styling*/
+
+.container{
+
+    max-width: 1520px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 1em 2.5em;
+    cursor:pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btn-primary{
+    color: #fff;
+    background: rgba(218, 159, 30, 0.622);
+}
+
+/*---------------------------------------Navbar Styling-------------------------------------------------------*/
+
+/*----------------------------------------------for desktop-----------------------------------------------------*/
+
+.navbar input[type=checkbox], .navbar .hamburger{
+    display: none;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width:100%;
+    background:#fff;
+    color: black;
+    opacity: 0.85;
+    z-index: 2;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width:100%;
+    align-items: center;
+}
+
+.menu{
+    order: 2;
+    display: flex;      
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+    margin-inline-end: 2rem;
+}
+
+
+.logo{
+    order: 1;
+    font-size: 3rem;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(40, 40, 40);
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: rgba(255, 0, 0, 0.582);
+}
+
+/*-------------------------------------------Main Display-----------------------------------------------------*/
+
+.mainshow{
+    height: 50vh;
+    background: linear-gradient(rgba(240,240,0, 0.144),rgba(255,255,255,0.336)),url("./img/mainshow.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mainshow-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+}
+ .tagline{
+    text-transform: uppercase;
+ }
+
+ /*-------------------------------About US styling-------------------------------------------------*/
+
+#about{
+    padding:50px 0px;
+    background:rgba(253, 239, 182, 0.547);
+    height: 50vh;
+}
+.about-us{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.6rem;
+    color: #555;
+}
+
+#about .small{
+    font-size: 1.6rem;
+    color:#666;
+    font-weight: 600;
+}
+
+.abt-img{
+    flex: 1 5 400px;
+    padding: 0px;
+    transform: translateX(150%);
+    animation: img-animate 1s ease-in-out forwards;
+}
+
+@keyframes img-animate{
+    100%{
+        transform: translateX(0);
+    }
+}
+.abt-txt{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: txt-animate 1s ease-in-out forwards;
+}
+
+@keyframes txt-animate {
+    100%{
+        transform: translateX(0);
+    }
+}
+.abt-img img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin:auto;
+    object-fit:cover;
+    object-position: right;
+}
+
+/* ----------------------------------- Food Menu Styling ----------------------------------------------*/
+
+#food-types{
+
+    padding: 5rem 0 10rem 0;
+}
+
+#food-types{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color:#555;
+}
+
+.food-content{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: fit-content;
+}
+
+.food-content img{
+    display:block;
+    width:100%;
+    margin:auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.food-img{
+    margin: 0 1rem;
+    position: relative;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px red;
+}
+
+.img-overlay{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    z-index: 3;
+    text-align: center;
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.img-overlay h3{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.img-overlay a{
+    font-size: 1.2rem;
+}
+
+.food-img::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.871);
+    /* opacity: 0; */
+    z-index: 1;
+
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+.food-img:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.food-img:hover .img-overlay{
+    opacity: 1;
+    top: 40%;
+}
